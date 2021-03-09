@@ -213,12 +213,12 @@ Daftar *routing web* yang terdaftar dengan menggunakan prefix *URI* v1/user:
 
 1. Route::post('login', 'AuthController@login')
   
-*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/login`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function login*. proses ini digunakan untuk melakukan *verify* user.  
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/login`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function login*. proses ini digunakan untuk melakukan *verify* user ketika melakukan *login*.  
   
 contoh alamat website:
 - `https://www.example.com/api/v1/user/login`
 
-pada contoh alamat website `https://www.example.com/api/v1/user/login` akan melakukan *verify* user.  
+pada contoh alamat website `https://www.example.com/api/v1/user/login` akan melakukan *verify* user ketika melakukan *login*.  
   
 2. Route::post('register', 'AuthController@signup')  
   
