@@ -23,7 +23,7 @@ Daftar *routing web* yang terdaftar:
    - `https://www.example.com/countries`
    - `https://www.example.com/provinces`
 
-   pada contoh alamat website `https://www.example.com/countries` akan meminta data dari basis data dengan tabel countries
+   pada contoh alamat website `https://www.example.com/countries` akan meminta data dari basis data dengan tabel countries   
    pada contoh alamat website `https://www.example.com/provinces` akan meminta data dari basis data dengan tabel provinces
 
 2. Route::get("{collection}/trash", 'ResourcesController@trash')
