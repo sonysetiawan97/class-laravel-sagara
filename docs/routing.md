@@ -17,7 +17,7 @@ Daftar *routing web* yang terdaftar:
 
 1. Route::get("{collection}", 'ResourcesController@index')   
    
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function* index. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan list data dari `{collection}` yang dituju.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function index*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan list data dari `{collection}` yang dituju.
    
 contoh alamat website:
 - `https://www.example.com/countries`
@@ -28,7 +28,7 @@ pada contoh alamat website `https://www.example.com/provinces` akan meminta data
    
 2. Route::get("{collection}/trash", 'ResourcesController@trash')   
    
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/trash` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function* trash. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan list data dari `{collection}` yang telah melakukan *soft delete*.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/trash` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function trash*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan list data dari `{collection}` yang telah melakukan *soft delete*.
 
 contoh alamat website:
 - `https://www.example.com/countries/trash`
@@ -37,7 +37,17 @@ contoh alamat website:
 pada contoh alamat website `https://www.example.com/countries/trash` akan meminta data dari basis data dengan tabel countries yang telah melakukan *soft delete*   
 pada contoh alamat website `https://www.example.com/provinces/trash` akan meminta data dari basis data dengan tabel provinces yang telah melakukan *soft delete*   
 
-3. Route::get("{collection}/create", 'ResourcesController@create')
+3. Route::get("{collection}/create", 'ResourcesController@create')   
+   
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/create` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function create*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman *create* atau pembuatan sesuai dengan nama `{collection}`.
+
+contoh alamat website:
+- `https://www.example.com/countries/create`
+- `https://www.example.com/provinces/create`
+
+pada contoh alamat website `https://www.example.com/countries/create` akan menampilkan halaman *create* atau pembuatan   
+pada contoh alamat website `https://www.example.com/provinces/create` akan menampilkan halaman *create* atau pembuatan  
+
 4. Route::post("{collection}", 'ResourcesController@store')
 5. Route::get("{collection}/import", 'ResourcesController@import')
 6. Route::post("{collection}/import", 'ResourcesController@doImport')
