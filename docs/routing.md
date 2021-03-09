@@ -11,7 +11,7 @@ Dalam *routing* terdapat beberapa *method* atau metode penerimaan *routing* yang
 
 ### Routing Web
 
-*Routing web* berisi daftar alamat website yang dapat diakses oleh pengguna yang berupa proses sesuai dengan alamat website yang dituju.
+*Routing web* berisi daftar alamat website yang dapat diakses oleh pengguna yang berupa proses sesuai dengan alamat website yang dituju. setiap *routing* akan membaca setelah `https://www.example.com/`
 
 Daftar *routing web* yang terdaftar:
 
