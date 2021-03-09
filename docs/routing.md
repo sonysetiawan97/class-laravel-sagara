@@ -20,8 +20,8 @@ Daftar *routing web* yang terdaftar:
    *Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah {collection}, dan {collection} disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function* index. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna.
    
    contoh alamat website:
-   - https://www.example.com/countries
-   - https://www.example.com/provinces
+   - `https://www.example.com/countries`
+   - `https://www.example.com/provinces`
 
    pada contoh alamat website https://www.example.com/countries akan meminta data dari basis data dengan tabel countries
    pada contoh alamat website https://www.example.com/provinces akan meminta data dari basis data dengan tabel provinces
