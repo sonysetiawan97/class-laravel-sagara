@@ -2,7 +2,7 @@
 
 *Routing* adalah kumpulan daftar alamat website yang sudah di daftarkan. Sehingga setiap alamat website yang terdaftar pada *routing* dapat diakses pengguna maupun mengirim informasi kepada pengguna.
 
-Dalam *routing* terdapat beberapa *method* atau metode penerimaan *routing* yang terdiri dari:
+###### Dalam *routing* terdapat beberapa *method* atau metode penerimaan *routing* yang terdiri dari:
 
 1. GET adalah Metode penerimaan ini digunakan untuk meminta data sesuai dengan alamat website yang dituju & didaftarkan.
 2. POST adalah Metode penerimaan ini digunakan untuk mengirim data untuk diproses oleh sistem sesuai dengan alamat website yang dituju & didaftarkan.
@@ -15,7 +15,7 @@ Dalam *routing* terdapat beberapa *method* atau metode penerimaan *routing* yang
 
 *Routing web* berisi daftar alamat website yang dapat diakses oleh pengguna yang berupa proses sesuai dengan alamat website yang dituju. setiap *routing* akan membaca setelah `https://www.example.com/`
 
-Daftar *routing web* yang terdaftar:
+###### Daftar *routing web* yang terdaftar:
 
 1. Route::get("{collection}", 'ResourcesController@index')   
    
@@ -209,7 +209,7 @@ pada contoh alamat website `https://www.example.com/provinces/trash/restore` aka
 
 *Routing api* adalah daftar alamat website yang berupa *service*. setiap *routing* akan membaca setelah `https://www.example.com/api/`.
 
-Daftar *routing web* yang terdaftar dengan menggunakan prefix *URI* v1/user:
+###### Daftar *routing web* yang terdaftar dengan menggunakan prefix *URI* v1/user:
 
 1. Route::post('login', 'AuthController@login')
   
@@ -276,38 +276,52 @@ contoh alamat website:
 
 pada contoh alamat website `https://www.example.com/api/v1/user/fcm` akan melakukan pembuatan / *update* FCM token.  
   
-Daftar *routing web* yang terdaftar dengan menggunakan prefix *URI* v1:
+###### Daftar *routing web* yang terdaftar dengan menggunakan prefix *URI* v1:
 
 1. Route::get("{collection}", 'Api\ApiResourcesController@index')
   
 *Routing* ini menggunakan *method* GET dan nama alamat website disini adalah `v1/{collection}`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function index*. proses ini digunakan untuk mengambil data dari basis data dengan nama tabel `{collection}`.  
   
 contoh alamat website:
-- `https://www.example.com/api/v1/user/countries`
-- `https://www.example.com/api/v1/user/provinces`
+- `https://www.example.com/api/v1/countries`
+- `https://www.example.com/api/v1/provinces`
 
-pada contoh alamat website `https://www.example.com/api/v1/user/countries` akan mengambil data dari basis data dengan nama tabel *countries*.  
-pada contoh alamat website `https://www.example.com/api/v1/user/provinces` akan mengambil data dari basis data dengan nama tabel *provinces*.  
+pada contoh alamat website `https://www.example.com/api/v1/countries` akan mengambil data dari basis data dengan nama tabel *countries*.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces` akan mengambil data dari basis data dengan nama tabel *provinces*.  
   
 2. Route::post("{collection}", 'Api\ApiResourcesController@store')
   
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/{collection}`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function store*. proses ini digunakan untuk membuat data baru yang akan disimpan pada basis data dengan nama tabel `{collection}`.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/countries`
+- `https://www.example.com/api/v1/provinces`
 
+pada contoh alamat website `https://www.example.com/api/v1/countries` akan menyipan data pada basis data dengan nama tabel *countries*.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces` akan menyipan data pada basis data dengan nama tabel *provinces*.  
   
 3. Route::get("{collection}/trash", 'Api\ApiResourcesController@trash')
   
-*Routing* ini menggunakan *method* GET dan nama alamat website disini adalah `v1/{collection}`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function trash*. proses ini digunakan untuk mengambil data dari basis data dengan nama tabel `{collection}` yang telah melakukan *soft delete*.  
+*Routing* ini menggunakan *method* GET dan nama alamat website disini adalah `v1/{collection}/trash`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function trash*. proses ini digunakan untuk mengambil data dari basis data dengan nama tabel `{collection}` yang telah melakukan *soft delete*.  
   
 contoh alamat website:
-- `https://www.example.com/api/v1/user/countries/trash`
-- `https://www.example.com/api/v1/user/provinces/trash`
+- `https://www.example.com/api/v1/countries/trash`
+- `https://www.example.com/api/v1/provinces/trash`
 
-pada contoh alamat website `https://www.example.com/api/v1/user/countries/trash` akan mengambil data dari basis data dengan nama tabel *countries* yang telah melakukan *soft delete*.  
-pada contoh alamat website `https://www.example.com/api/v1/user/provinces/trash` akan mengambil data dari basis data dengan nama tabel *provinces* yang telah melakukan *soft delete*.  
+pada contoh alamat website `https://www.example.com/api/v1/countries/trash` akan mengambil data dari basis data dengan nama tabel *countries* yang telah melakukan *soft delete*.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/trash` akan mengambil data dari basis data dengan nama tabel *provinces* yang telah melakukan *soft delete*.  
   
 4. Route::post("{collection}/import", 'Api\ApiResourcesController@import')  
 5. Route::post("{collection}/export", 'Api\ApiResourcesController@export')
   
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/{collection}/export`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function export*. proses ini digunakan untuk mengambil data pada basis data dengan nama tabel `{collection}` kemudian akan dibentuk file dengan format csv atau xlsx dan dapat diundah.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/countries/export`
+- `https://www.example.com/api/v1/provinces/export`
 
+pada contoh alamat website `https://www.example.com/api/v1/countries/export` akan mengambil data pada basis data dengan nama tabel *countries* kemudian akan dibentuk file dengan format csv atau xlsx dan dapat diundah.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/export` akan mengambil data pada basis data dengan nama tabel *provinces*kemudian akan dibentuk file dengan format csv atau xlsx dan dapat diundah.  
   
 6. Route::get("{collection}/report", 'Api\ApiResourcesController@report')  
 7. Route::get("{collection}/{id}/trashed", 'Api\ApiResourcesController@trashed')->where('id', '[a-zA-Z0-9]+')
@@ -315,15 +329,22 @@ pada contoh alamat website `https://www.example.com/api/v1/user/provinces/trash`
 *Routing* ini menggunakan *method* GET dan nama alamat website disini adalah `v1/{collection}/{id}/trashed`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function trashed*. proses ini digunakan untuk mengambil data dari basis data dengan nama tabel `{collection}` dengan id `{id}` yang telah melakukan *soft delete*.  
   
 contoh alamat website:
-- `https://www.example.com/api/v1/user/countries/1/trashed`
-- `https://www.example.com/api/v1/user/provinces/2/trashed`
+- `https://www.example.com/api/v1/countries/1/trashed`
+- `https://www.example.com/api/v1/provinces/2/trashed`
 
-pada contoh alamat website `https://www.example.com/api/v1/user/countries/1/trashed` akan mengambil data dari basis data dengan nama tabel *countries* dengan id 1 yang telah melakukan *soft delete*.  
-pada contoh alamat website `https://www.example.com/api/v1/user/provinces/2/trashed` akan mengambil data dari basis data dengan nama tabel *provinces* dengan id 2 yang telah melakukan *soft delete*.  
+pada contoh alamat website `https://www.example.com/api/v1/countries/1/trashed` akan mengambil data dari basis data dengan nama tabel *countries* dengan id 1 yang telah melakukan *soft delete*.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/2/trashed` akan mengambil data dari basis data dengan nama tabel *provinces* dengan id 2 yang telah melakukan *soft delete*.  
   
 8. Route::post("{collection}/{id}/restore", 'Api\ApiResourcesController@restore')->where('id', '[a-zA-Z0-9]+')
   
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/{collection}/{id}/restore`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function restore*. proses ini digunakan untuk mengembalikan data yang telah melakukan *soft delete* pada basis data dengan nama tabel `{collection}`.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/countries/1/restore`
+- `https://www.example.com/api/v1/provinces/2/restore`
 
+pada contoh alamat website `https://www.example.com/api/v1/countries/1/restore` akan mengembalikan data yang telah melakukan *soft delete* pada basis data dengan nama tabel *countries* dengan id 1.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/2/restore` akan mengembalikan data yang telah melakukan *soft delete* pada basis data dengan nama tabel *provinces* dengan id 2.  
   
 9. Route::delete("{collection}/{id}/delete", 'Api\ApiResourcesController@delete')->where('id', '[a-zA-Z0-9]+')
   
@@ -334,11 +355,11 @@ pada contoh alamat website `https://www.example.com/api/v1/user/provinces/2/tras
 *Routing* ini menggunakan *method* GET dan nama alamat website disini adalah `v1/{collection}/{id}`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function show*. proses ini digunakan untuk mengambil data dari basis data dengan nama tabel `{collection}` dengan id `{id}`.  
   
 contoh alamat website:
-- `https://www.example.com/api/v1/user/countries/1`
-- `https://www.example.com/api/v1/user/provinces/2`
+- `https://www.example.com/api/v1/countries/1`
+- `https://www.example.com/api/v1/provinces/2`
 
-pada contoh alamat website `https://www.example.com/api/v1/user/countries/1` akan mengambil data dari basis data dengan nama tabel *countries* dengan id 1.  
-pada contoh alamat website `https://www.example.com/api/v1/user/provinces/2` akan mengambil data dari basis data dengan nama tabel *provinces* dengan id 2.  
+pada contoh alamat website `https://www.example.com/api/v1/countries/1` akan mengambil data dari basis data dengan nama tabel *countries* dengan id 1.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/2` akan mengambil data dari basis data dengan nama tabel *provinces* dengan id 2.  
   
 11. Route::put("{collection}/{id}", 'Api\ApiResourcesController@update')->where('id', '[a-zA-Z0-9]+')
   
