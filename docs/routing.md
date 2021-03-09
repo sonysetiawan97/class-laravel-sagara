@@ -236,9 +236,9 @@ pada contoh alamat website `https://www.example.com/api/v1/user/register` akan m
 7. Route::patch('password', 'AuthController@changePassword')
 8. Route::post('fcm', 'AuthController@createUpdateFCM')  
   
-*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/register`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function createUpdateFCM*. proses ini digunakan untuk melakukan pembuatan / *update* FCM token.  
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/fcm`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function createUpdateFCM*. proses ini digunakan untuk melakukan pembuatan / *update* FCM token.  
   
 contoh alamat website:
-- `https://www.example.com/api/v1/user/createUpdateFCM`
+- `https://www.example.com/api/v1/user/fcm`
 
-pada contoh alamat website `https://www.example.com/api/v1/user/createUpdateFCM` akan melakukan pembuatan / *update* FCM token.  
+pada contoh alamat website `https://www.example.com/api/v1/user/fcm` akan melakukan pembuatan / *update* FCM token.  
