@@ -17,7 +17,7 @@ Daftar *routing web* yang terdaftar:
 
 1. Route::get("{collection}", 'ResourcesController@index')   
    
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function index*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman list data dari `{collection}` yang dituju.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function index*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman list data dari `{collection}` yang dituju.
    
 contoh alamat website:
 - `https://www.example.com/countries`
@@ -28,7 +28,7 @@ pada contoh alamat website `https://www.example.com/provinces` akan meminta data
    
 2. Route::get("{collection}/trash", 'ResourcesController@trash')   
    
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/trash` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function trash*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman list data dari `{collection}` yang telah melakukan *soft delete*.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/trash`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function trash*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman list data dari `{collection}` yang telah melakukan *soft delete*.
 
 contoh alamat website:
 - `https://www.example.com/countries/trash`
@@ -39,7 +39,7 @@ pada contoh alamat website `https://www.example.com/provinces/trash` akan memint
 
 3. Route::get("{collection}/create", 'ResourcesController@create')   
    
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/create` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function create*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman *create* atau pembuatan sesuai dengan nama `{collection}`.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/create`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function create*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman *create* atau pembuatan sesuai dengan nama `{collection}`.
 
 contoh alamat website:
 - `https://www.example.com/countries/create`
@@ -48,10 +48,20 @@ contoh alamat website:
 pada contoh alamat website `https://www.example.com/countries/create` akan menampilkan halaman *create* atau pembuatan.   
 pada contoh alamat website `https://www.example.com/provinces/create` akan menampilkan halaman *create* atau pembuatan.  
 
-4. Route::post("{collection}", 'ResourcesController@store')
+4. Route::post("{collection}", 'ResourcesController@store')  
+  
+*Routing* ini menggunakan *method* POST dan nama alamat website untuk diakses pengguna adalah `{collection}`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function store*. Proses ini melakukan penyimpanan data sesuai yang telah diisi pada halaman *create* pada tabel basis data sesuai dengan nama `{collection}`. pada alamat website ini dapat diakses setelah melakukan *submit* pada halaman *create* atau pembuatan 
+  
+contoh alamat website:
+- `https://www.example.com/countries`
+- `https://www.example.com/provices`
+  
+pada contoh alamat website `https://www.example.com/countries` akan melakukan penyimpanan data pada table basis data *countries*.
+pada contoh alamat website `https://www.example.com/provinces` akan melakukan penyimpanan data pada table basis data *provinces*.
+
 5. Route::get("{collection}/import", 'ResourcesController@import')  
   
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/import` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function import*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman *import* sesuai dengan nama `{collection}`.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/import`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function import*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman *import* sesuai dengan nama `{collection}`.
 
 contoh alamat website:
 - `https://www.example.com/countries/import`
@@ -60,10 +70,20 @@ contoh alamat website:
 pada contoh alamat website `https://www.example.com/countries/import` akan menampilkan halaman *import*.   
 pada contoh alamat website `https://www.example.com/provinces/import` akan menampilkan halaman *import*.  
 
-6. Route::post("{collection}/import", 'ResourcesController@doImport')
+6. Route::post("{collection}/import", 'ResourcesController@doImport')  
+  
+*Routing* ini menggunakan *method* POST dan nama alamat website untuk diakses pengguna adalah `{collection}\import`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function doImport*. Proses ini melakukan penyimpanan data sesuai dengan file csv yang telah dipilihan kemudian disimpan pada tabel basis data sesuai dengan nama `{collection}`. pada alamat website ini dapat diakses setelah melakukan *import* pada halaman *import*
+  
+contoh alamat website:
+- `https://www.example.com/countries/import`
+- `https://www.example.com/provices/import`
+  
+pada contoh alamat website `https://www.example.com/countries/import` akan melakukan penyimpanan data sesuai file csv pada table basis data *countries*.
+pada contoh alamat website `https://www.example.com/provinces/import` akan melakukan penyimpanan data sesuai file csv pada table basis data *provinces*.
+
 7. Route::get("{collection}/export", 'ResourcesController@export')  
   
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/export` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function export*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman *export* sesuai dengan nama `{collection}`.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/export`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function export*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman *export* sesuai dengan nama `{collection}`.
 
 contoh alamat website:
 - `https://www.example.com/countries/export`
@@ -72,7 +92,17 @@ contoh alamat website:
 pada contoh alamat website `https://www.example.com/countries/export` akan menampilkan halaman *export*.   
 pada contoh alamat website `https://www.example.com/provinces/export` akan menampilkan halaman *export*.  
 
-8. Route::post("{collection}/export", 'ResourcesController@doExport')
+8. Route::post("{collection}/export", 'ResourcesController@doExport')  
+  
+*Routing* ini menggunakan *method* POST dan nama alamat website untuk diakses pengguna adalah `{collection}\export`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function doExport*. Proses ini melakukan mengeluarkan data sesuai dengan nama `{collection}` kemudia data tersebut akan dibentuk menjadi file berformat csv dan dapat di undah. pada alamat website ini dapat diakses setelah melakukan *export* pada halaman *export*
+  
+contoh alamat website:
+- `https://www.example.com/countries/export`
+- `https://www.example.com/provices/export`
+  
+pada contoh alamat website `https://www.example.com/countries/export` akan melakukan pengeluaran data table basis data *countries* dan kemudian akan dibentuk menjadi file berformat csv dan dapat di undah.
+pada contoh alamat website `https://www.example.com/provinces/export` akan melakukan pengeluaran data table basis data *provices* dan kemudian akan dibentuk menjadi file berformat csv dan dapat di undah.
+
 9. Route::get("{collection}/{id}", 'ResourcesController@show')  
   
 *Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/{id}`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat dan `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function show*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman detail data sesuai dengan nama `{collection}` dan `{id}`.
