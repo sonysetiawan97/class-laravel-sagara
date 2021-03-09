@@ -207,7 +207,7 @@ pada contoh alamat website `https://www.example.com/provinces/trash/restore` aka
   
 ### Routing API
 
-*Routing api* adalah daftar alamat website yang berupa *service*. setiap *routing* akan membaca setelah `https://www.example.com/api/`
+*Routing api* adalah daftar alamat website yang berupa *service*. setiap *routing* akan membaca setelah `https://www.example.com/api/`.
 
 Daftar *routing web* yang terdaftar dengan menggunakan prefix *URI* v1/user:
 
@@ -230,10 +230,43 @@ contoh alamat website:
 pada contoh alamat website `https://www.example.com/api/v1/user/register` akan melakukan pendaftaran user.  
   
 3. Route::patch('password/reset', 'AuthController@resetPassword')
+  
+*Routing* ini menggunakan *method* PATCH dan nama alamat website disini adalah `v1/user/password/reset`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function resetPassword*. proses ini digunakan untuk melakukan *reset* password user.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/user/password/reset`
+
+pada contoh alamat website `https://www.example.com/api/v1/user/password/reset` akan melakukan *reset* password user.  
+  
 4. Route::delete('logout', 'AuthController@logout')
+  
+*Routing* ini menggunakan *method* DELETE dan nama alamat website disini adalah `v1/user/logout`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function logout*. proses ini digunakan untuk melakukan *logout* user.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/user/logout`
+
+pada contoh alamat website `https://www.example.com/api/v1/user/logout` akan melakukan *logout* user.  
+
 5. Route::get('profile', 'AuthController@profile')
+  
+*Routing* ini menggunakan *method* GET dan nama alamat website disini adalah `v1/user/profile`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function profile*. proses ini digunakan untuk mengambil data *profile* user yang sedang *login*.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/user/profile`
+
+pada contoh alamat website `https://www.example.com/api/v1/user/profile` akan mengambil data *profile* user yang sedang *login*.
+  
 6. Route::get('checkin', 'AuthController@checkin')
+  
 7. Route::patch('password', 'AuthController@changePassword')
+  
+*Routing* ini menggunakan *method* PATCH dan nama alamat website disini adalah `v1/user/password`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function changePassword*. proses ini digunakan untuk melakukan ganti password user.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/user/password`
+
+pada contoh alamat website `https://www.example.com/api/v1/user/password` akan melakukan ganti password user.  
+  
 8. Route::post('fcm', 'AuthController@createUpdateFCM')  
   
 *Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/fcm`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function createUpdateFCM*. proses ini digunakan untuk melakukan pembuatan / *update* FCM token.  
