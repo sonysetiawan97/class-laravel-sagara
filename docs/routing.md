@@ -337,7 +337,7 @@ pada contoh alamat website `https://www.example.com/api/v1/provinces/2/trashed` 
   
 8. Route::post("{collection}/{id}/restore", 'Api\ApiResourcesController@restore')->where('id', '[a-zA-Z0-9]+')
   
-*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/{collection}/{id}/restore`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function restore*. proses ini digunakan untuk mengembalikan data yang telah melakukan *soft delete* pada basis data dengan nama tabel `{collection}`.  
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/{collection}/{id}/restore`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function restore*. proses ini digunakan untuk mengembalikan data yang telah melakukan *soft delete* pada basis data dengan nama tabel `{collection}` dan `{id}`.  
   
 contoh alamat website:
 - `https://www.example.com/api/v1/countries/1/restore`
@@ -348,7 +348,14 @@ pada contoh alamat website `https://www.example.com/api/v1/provinces/2/restore` 
   
 9. Route::delete("{collection}/{id}/delete", 'Api\ApiResourcesController@delete')->where('id', '[a-zA-Z0-9]+')
   
+*Routing* ini menggunakan *method* DELETE dan nama alamat website disini adalah `v1/{collection}/{id}/delete`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function delete*. proses ini digunakan untuk menghapus data secara *permanent* atau *hard delete* yang telah melakukan *soft delete* pada basis data dengan nama tabel `{collection}` dengan id `{id}`.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/countries/1/delete`
+- `https://www.example.com/api/v1/provinces/2/delete`
 
+pada contoh alamat website `https://www.example.com/api/v1/countries/1/delete` akan menghapus data secara *permanent* atau *hard delete* yang telah melakukan *soft delete* pada basis data dengan nama tabel *countries* dengan id 1.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/2/delete` akan menghapus data secara *permanent* atau *hard delete* yang telah melakukan *soft delete* pada basis data dengan nama tabel *provinces* dengan id 2.  
   
 10. Route::get("{collection}/{id}", 'Api\ApiResourcesController@show')->where('id', '[a-zA-Z0-9]+')
   
@@ -363,13 +370,34 @@ pada contoh alamat website `https://www.example.com/api/v1/provinces/2` akan men
   
 11. Route::put("{collection}/{id}", 'Api\ApiResourcesController@update')->where('id', '[a-zA-Z0-9]+')
   
+*Routing* ini menggunakan *method* PUT dan nama alamat website disini adalah `v1/{collection}/{id}`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function update*. proses ini digunakan untuk *update* data pada basis data dengan nama tabel `{collection}` dengan id `{id}`.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/countries/1`
+- `https://www.example.com/api/v1/provinces/2`
 
+pada contoh alamat website `https://www.example.com/api/v1/countries/1` akan *update* data pada basis data dengan nama tabel *countries* dengan id 1.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/2` akan *update* data pada basis data dengan nama tabel *provinces* dengan id 2.  
   
 12. Route::patch("{collection}/{id}", 'Api\ApiResourcesController@patch')->where('id', '[a-zA-Z0-9]+')
   
+*Routing* ini menggunakan *method* PATCH dan nama alamat website disini adalah `v1/{collection}/{id}`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function patch*. proses ini digunakan untuk *update* sebagian data pada basis data dengan nama tabel `{collection}` dengan id `{id}`.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/countries/1`
+- `https://www.example.com/api/v1/provinces/2`
 
+pada contoh alamat website `https://www.example.com/api/v1/countries/1` akan *update* sebagian data pada basis data dengan nama tabel *countries* dengan id 1.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/2` akan *update* sebagian data pada basis data dengan nama tabel *provinces* dengan id 2.
   
 13. Route::delete("{collection}/{id}", 'Api\ApiResourcesController@destroy')->where('id', '[a-zA-Z0-9]+')
   
+*Routing* ini menggunakan *method* DELETE dan nama alamat website disini adalah `v1/{collection}/{id}`. `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ApiResourcesController* dengan nama *function destroy*. proses ini digunakan untuk menghapus data secara *soft delete* pada basis data dengan nama tabel `{collection}` dengan id `{id}`.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/countries/1`
+- `https://www.example.com/api/v1/provinces/2`
 
+pada contoh alamat website `https://www.example.com/api/v1/countries/1` akan menghapus data secara *soft delete* pada basis data dengan nama tabel *countries* dengan id 1.  
+pada contoh alamat website `https://www.example.com/api/v1/provinces/2` akan menghapus data secara *soft delete* pada basis data dengan nama tabel *provinces* dengan id 2.  
   
