@@ -56,7 +56,7 @@ contoh alamat website:
 - `https://www.example.com/countries`
 - `https://www.example.com/provices`
   
-pada contoh alamat website `https://www.example.com/countries` akan melakukan penyimpanan data pada table basis data *countries*.
+pada contoh alamat website `https://www.example.com/countries` akan melakukan penyimpanan data pada table basis data *countries*.   
 pada contoh alamat website `https://www.example.com/provinces` akan melakukan penyimpanan data pada table basis data *provinces*.
 
 5. Route::get("{collection}/import", 'ResourcesController@import')  
@@ -78,7 +78,7 @@ contoh alamat website:
 - `https://www.example.com/countries/import`
 - `https://www.example.com/provices/import`
   
-pada contoh alamat website `https://www.example.com/countries/import` akan melakukan penyimpanan data sesuai file csv pada table basis data *countries*.
+pada contoh alamat website `https://www.example.com/countries/import` akan melakukan penyimpanan data sesuai file csv pada table basis data *countries*.   
 pada contoh alamat website `https://www.example.com/provinces/import` akan melakukan penyimpanan data sesuai file csv pada table basis data *provinces*.
 
 7. Route::get("{collection}/export", 'ResourcesController@export')  
@@ -100,7 +100,7 @@ contoh alamat website:
 - `https://www.example.com/countries/export`
 - `https://www.example.com/provices/export`
   
-pada contoh alamat website `https://www.example.com/countries/export` akan melakukan pengeluaran data table basis data *countries* dan kemudian akan dibentuk menjadi file berformat csv dan dapat di undah.
+pada contoh alamat website `https://www.example.com/countries/export` akan melakukan pengeluaran data table basis data *countries* dan kemudian akan dibentuk menjadi file berformat csv dan dapat di undah.   
 pada contoh alamat website `https://www.example.com/provinces/export` akan melakukan pengeluaran data table basis data *provices* dan kemudian akan dibentuk menjadi file berformat csv dan dapat di undah.
 
 9. Route::get("{collection}/{id}", 'ResourcesController@show')  
