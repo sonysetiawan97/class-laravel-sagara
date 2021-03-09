@@ -17,7 +17,7 @@ Daftar *routing web* yang terdaftar:
 
 1. Route::get("{collection}", 'ResourcesController@index')   
    
-*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah {collection}, dan {collection} disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function* index. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna.
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function* index. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan list data dari `{collection}` yang dituju.
    
 contoh alamat website:
 - `https://www.example.com/countries`
@@ -28,6 +28,14 @@ pada contoh alamat website `https://www.example.com/provinces` akan meminta data
    
 2. Route::get("{collection}/trash", 'ResourcesController@trash')   
    
+*Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/trash` dan `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function* trash. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan list data dari `{collection}` yang telah melakukan *soft delete*.
+
+contoh alamat website:
+- `https://www.example.com/countries/trash`
+- `https://www.example.com/provinces/trash`
+
+pada contoh alamat website `https://www.example.com/countries/trash` akan meminta data dari basis data dengan tabel countries yang telah melakukan *soft delete*   
+pada contoh alamat website `https://www.example.com/provinces/trash` akan meminta data dari basis data dengan tabel provinces yang telah melakukan *soft delete*   
 
 3. Route::get("{collection}/create", 'ResourcesController@create')
 4. Route::post("{collection}", 'ResourcesController@store')
