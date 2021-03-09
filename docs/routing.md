@@ -8,6 +8,8 @@ Dalam *routing* terdapat beberapa *method* atau metode penerimaan *routing* yang
 2. POST adalah Metode penerimaan ini digunakan untuk mengirim data untuk diproses oleh sistem sesuai dengan alamat website yang dituju & didaftarkan.
 3. DELETE adalah Metode penerimaan ini digunakan untuk menghapus data sesuai dengan alamat website yang dituju & didaftarkan.
 4. PUT adalah Metode penerimaan ini digunakan untuk melakukan perubahan data sesuai dengan alamat webiste yang dituju & didaftarkan
+5. PATCH adalah Metode penerimaan ini digunakan untuk melakukan perubahan sebagian data sesuai dengan alamat webiste yang dituju & didaftarkan
+
 
 ### Routing Web
 
@@ -199,5 +201,44 @@ contoh alamat website:
 - `https://www.example.com/countries/trash/restore`
 - `https://www.example.com/provinces/trash/restore`
 
-pada contoh alamat website `https://www.example.com/countries/trash/restore` mengembalikan setiap data yang pernah melakukan *soft delete* pada table basis data *countries*.   
-pada contoh alamat website `https://www.example.com/provinces/trash/restore` mengembalikan setiap data yang pernah melakukan *soft delete* pada table basis data *provinces*.  
+pada contoh alamat website `https://www.example.com/countries/trash/restore` akan mengembalikan setiap data yang pernah melakukan *soft delete* pada table basis data *countries*.   
+pada contoh alamat website `https://www.example.com/provinces/trash/restore` akan mengembalikan setiap data yang pernah melakukan *soft delete* pada table basis data *provinces*.  
+  
+  
+### Routing API
+
+*Routing api* adalah daftar alamat website yang berupa *service*. setiap *routing* akan membaca setelah `https://www.example.com/api/`
+
+Daftar *routing web* yang terdaftar dengan menggunakan prefix *URI* v1/user:
+
+1. Route::post('login', 'AuthController@login')
+  
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/login`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function login*. proses ini digunakan untuk melakukan *verify* user.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/user/login`
+
+pada contoh alamat website `https://www.example.com/api/v1/user/login` akan melakukan *verify* user.  
+  
+2. Route::post('register', 'AuthController@signup')  
+  
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/register`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function signup*. proses ini digunakan untuk melakukan pendaftaran user.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/user/register`
+
+pada contoh alamat website `https://www.example.com/api/v1/user/register` akan melakukan pendaftaran user.  
+  
+3. Route::patch('password/reset', 'AuthController@resetPassword')
+4. Route::delete('logout', 'AuthController@logout')
+5. Route::get('profile', 'AuthController@profile')
+6. Route::get('checkin', 'AuthController@checkin')
+7. Route::patch('password', 'AuthController@changePassword')
+8. Route::post('fcm', 'AuthController@createUpdateFCM')  
+  
+*Routing* ini menggunakan *method* POST dan nama alamat website disini adalah `v1/user/register`. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *AuthController* dengan nama *function createUpdateFCM*. proses ini digunakan untuk melakukan pembuatan / *update* FCM token.  
+  
+contoh alamat website:
+- `https://www.example.com/api/v1/user/createUpdateFCM`
+
+pada contoh alamat website `https://www.example.com/api/v1/user/createUpdateFCM` akan melakukan pembuatan / *update* FCM token.  
