@@ -136,7 +136,17 @@ contoh alamat website:
 pada contoh alamat website `https://www.example.com/countries/1` akan mengubah data pada table basis data *countries* dengan id 1.   
 pada contoh alamat website `https://www.example.com/provinces/2` akan mengubah data pada table basis data *provinces* dengan id 2.  
 
-12. Route::delete("{collection}/{id}", 'ResourcesController@destroy')
+12. Route::delete("{collection}/{id}", 'ResourcesController@destroy')  
+  
+*Routing* ini menggunakan *method* DELETE dan nama alamat website untuk diakses pengguna adalah `{collection}/{id}`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat dan `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function destroy*. Pada proses ini akan melakukan *soft delete* data sesuai dengan data dengan nama `{collection}` dan `{id}`. pada alamat website ini dapat diakses setelah melakukan *delete* pada halaman *index*.  
+
+contoh alamat website:
+- `https://www.example.com/countries/1`
+- `https://www.example.com/provinces/2`
+
+pada contoh alamat website `https://www.example.com/countries/1` akan melakukan *soft delete* pada table basis data *countries* dengan id 1.   
+pada contoh alamat website `https://www.example.com/provinces/2` akan melakukan *soft delete* pada table basis data *provinces* dengan id 2.
+
 13. Route::get("{collection}/{id}/trashed", 'ResourcesController@trashed')  
   
 *Routing* ini menggunakan *method* GET dan nama alamat website untuk diakses pengguna adalah `{collection}/{id}`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat dan `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function trashed*. setelah proses persiapan data pada *controller* sudah selesai, maka hasil data tersebut akan diteruskan kepada pengguna. pada *routing* ini akan menampilkan halaman detail data yang sudah melakukan *soft delete* sesuai dengan nama `{collection}` dan `{id}`.
@@ -159,8 +169,28 @@ contoh alamat website:
 pada contoh alamat website `https://www.example.com/countries/1/restore` mengembalikan data yang pernah melakukan *soft delete* pada table basis data *countries* dengan id 1.   
 pada contoh alamat website `https://www.example.com/provinces/2/restore` mengembalikan data yang pernah melakukan *soft delete* pada table basis data *provinces* dengan id 2.  
 
-15. Route::delete("{collection}/{id}/delete", 'ResourcesController@delete')
+15. Route::delete("{collection}/{id}/delete", 'ResourcesController@delete')  
+  
+*Routing* ini menggunakan *method* DELETE dan nama alamat website untuk diakses pengguna adalah `{collection}/{id}/delete`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat dan `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function delete*. Pada proses ini akan melakukan *hard delete* atau *permanent delete* data yang pernah melakukan *soft delete* sesuai dengan data dengan nama `{collection}` dan `{id}`. pada alamat website ini dapat diakses setelah melakukan *delete permanent* pada halaman *trash*.  
+
+contoh alamat website:
+- `https://www.example.com/countries/1/delete`
+- `https://www.example.com/provinces/2/delete`
+
+pada contoh alamat website `https://www.example.com/countries/1/delete` akan melakukan *hard delete* atau *permanent delete* pada table basis data *countries* dengan id 1.   
+pada contoh alamat website `https://www.example.com/provinces/2/delete` akan melakukan *hard delete* atau *permanent delete* pada table basis data *provinces* dengan id 2.
+
 16. Route::delete("{collection}/trash/empty", 'ResourcesController@empty')
+  
+*Routing* ini menggunakan *method* DELETE dan nama alamat website untuk diakses pengguna adalah `{collection}/trash/empty`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat dan `{id}` disini merupakan *id* yang telah disimpan pada basis data di tabel `{collection}` yang dituju. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function empty*. Pada proses ini akan melakukan *hard delete* atau *permanent delete* data yang pernah melakukan *soft delete* sesuai dengan data dengan nama `{collection}`. pada alamat website ini dapat diakses setelah melakukan *delete permanent* pada halaman *trash*.  
+
+contoh alamat website:
+- `https://www.example.com/countries/trash/delete`
+- `https://www.example.com/provinces/trash/delete`
+
+pada contoh alamat website `https://www.example.com/countries/trash/delete` akan melakukan *hard delete* atau *permanent delete* pada table basis data *countries*.   
+pada contoh alamat website `https://www.example.com/provinces/trash/delete` akan melakukan *hard delete* atau *permanent delete* pada table basis data *provinces*.  
+  
 17. Route::put("{collection}/trash/restore", 'ResourcesController@putBack')  
   
 *Routing* ini menggunakan *method* PUT dan nama alamat website untuk diakses pengguna adalah `{collection}/trash/restore`, `{collection}` disini merupakan nama *model* atau nama tabel basis data yang sudah dibuat. Ketika mengakses *routing* ini maka untuk prosesnya akan diterukan ke *controller* bernama *ResourcesController* dengan nama *function putBack*. Pada proses ini akan mengembalikan setiap data yang sudah pernah melakukan *soft delete* sesuai dengan nama `{collection}`. pada alamat website ini dapat diakses setelah melakukan *restore all* pada halaman *trash*.  
