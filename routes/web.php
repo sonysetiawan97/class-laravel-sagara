@@ -116,6 +116,10 @@ Route::get('/category', function () {
     print_r($status);
 });
 
+Route::get('/component', function(){
+    return view('component');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
