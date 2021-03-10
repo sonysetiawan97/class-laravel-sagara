@@ -12,7 +12,7 @@
   
 #### Email  
   
-*Email component* berisi bagian dari *input* dengan tipe *email*. *Email component* ini hanya dapat menerima *email* seperti "example@example.com". *Email component* digunakan untuk *input* yang hanya menerima *email* oleh pengguna.
+*Email component* berisi bagian dari *input* dengan tipe *email*. *Email component* ini hanya dapat menerima *email* seperti `"example@example.com"`. *Email component* digunakan untuk *input* yang hanya menerima *email* oleh pengguna.
   
 #### Checkbox  
   
