@@ -116,4 +116,78 @@ Empty ini merupakan fungsi yang digunakan untuk penghapusan (harddelete) data ya
   
 Empty ini berisi fungsi pengecekan model, jika terdapat model maka fungsi akan dilanjutkan dengan melakukan proses penghapusan seluruh data (harddelete) yang telah melakukan softdelete.  
   
-### ApiResourceController
+### ApiResourcesController  
+  
+ApiResourcesController berisi fungsi fungsi dari service. setiap routing pada api routing akan diteruskan ke controller ini sesuai dengan nama fungsi yang dituju.
+
+#### Construct  
+  
+Construct ini merupakan fungsi yang selalu berjalan setiap ApiResourcesController ini digunakan.  
+  
+Construct ini berisi fungsi untuk melakukan pengecekan terhadap model atau nama tabel yang dituju, pendeklarasian structures, pendeklarasian nama model atau nama tabel yang digunakan, pendeklarasian nama segments yang digunakan, dan juga pendeklarasian response yang dikirimkan.  
+  
+#### Index  
+  
+Index ini merupakan fungsi untuk meminta data ke basis data.  
+  
+Index ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pengambilan data sesuai model yang dituju, kemudian data tersebut akan dikirimkan melalui response dan data tersebut dapat diolah oleh pihak yang telah melakukan permintaan data.  
+  
+#### Store  
+  
+Store ini merupakan fungsi untuk menyimpan data ke basis data.  
+  
+Store ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan penyimpanan data sesuai ke tabel model yang dituju.
+  
+#### Show  
+  
+Show ini merupakan fungsi untuk meminta data ke basis data sesuai dengan id yang dituju.  
+  
+Show ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pengambilan data sesuai model dan id yang dituju, kemudian data tersebut akan dikirimkan melalui response dan data tersebut dapat diolah oleh pihak yang telah melakukan permintaan data.  
+  
+#### Update  
+  
+Update ini merupakan fungsi untuk pengubahan data sesuai dengan id yang dituju.  
+  
+Update ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pengubahan data sesuai ke tabel model dan id yang dituju.
+  
+#### Patch  
+  
+Patch ini merupakan fungsi untuk pengubahan data sesuai dengan id yang dituju.  
+  
+Patch ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pengubahan data sesuai ke tabel model dan id yang dituju.
+  
+#### Destroy  
+  
+Destroy ini merupakan fungsi untuk melakukan proses softdelete data sesuai dengan id yang dituju.  
+  
+Destroy ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan softdelete data sesuai ke tabel model dan id yang dituju.
+  
+#### Trash  
+  
+Trash ini merupakan fungsi untuk meminta data yang telah melakukan softdelete ke basis data.  
+  
+Trash ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pengambilan data yang telah melakukan softdelete sesuai model yang dituju, kemudian data tersebut akan dikirimkan melalui response dan data tersebut dapat diolah oleh pihak yang telah melakukan permintaan data.  
+  
+#### Trashed  
+  
+Trashed ini merupakan fungsi untuk meminta data yang telah melakukan softdelete ke basis data sesuai dengan id yang dituju.  
+  
+Trashed ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pengambilan data yang telah melakukan softdelete sesuai model dan id yang dituju, kemudian data tersebut akan dikirimkan melalui response dan data tersebut dapat diolah oleh pihak yang telah melakukan permintaan data.  
+  
+#### Restore  
+  
+Restore ini merupakan fungsi untuk mengembalikan data yang telah melakukan softdelete ke basis data sesuai dengan id yang dituju.  
+  
+Restore ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pengembalian data yang telah melakukan softdelete sesuai model dan id yang dituju.  
+  
+#### Delete  
+  
+Delete ini merupakan fungsi untuk menghapus data (harddelete) yang telah melakukan softdelete ke basis data sesuai dengan id yang dituju.  
+  
+Delete ini dimulai dengan melakukan pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan penghapusan data (harddelete) yang telah melakukan softdelete sesuai model dan id yang dituju.  
+  
+#### Export  
+  
+Export ini merupakan fungsi yang digunakan untuk melakukan proses export.  
+  
+Export ini berisi fungsi pengecekan model dan permissions. Jika keduanya berhasil tervalidasi maka akan dilanjutkan melakukan pencari data dari model yang dituju. kemudian model tersebut akan dibentuk ke format file csv dengan isian dari data yang telah diambil sesuai dengan model yang dituju.
